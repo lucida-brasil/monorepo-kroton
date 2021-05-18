@@ -1,6 +1,7 @@
 import React from "react";
 import { Styled } from "direflow-component";
 import Timer from "react-compound-timer";
+import { HTMLActions } from "@zoly-cro/hooks";
 
 // eslint-disable-next-line react/prop-types
 const TooltipGatilho = () => {
@@ -15,7 +16,9 @@ const TooltipGatilho = () => {
       filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
       animation: timer-in 0.5s ease-in-out forwards;
     }
-    
+    .svg__color {
+      ${HTMLActions.hexadecimalToFilter(component.color)}
+    }
     .timer__container {
       display: flex;
       align-items: center;
@@ -110,7 +113,7 @@ const TooltipGatilho = () => {
           <div className="timer__around">
             <div className="timer__container">
               <img
-              className="svgColor"
+                className="svg__color"
                 src={
                   "https://storage.googleapis.com/cro_seo-hospedagem_de_assets/Imagens%20Kroton%20-%20Ex%20Maxymiser/anhanguera/SVGS/ampulheta.svg"
                 }

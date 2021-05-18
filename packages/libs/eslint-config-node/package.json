@@ -1,0 +1,13 @@
+{
+  "name": "@zoly-cro/eslint-config-node",
+  "version": "1.0.0",
+  "main": "eslint.rc.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.0"
+  }
+}

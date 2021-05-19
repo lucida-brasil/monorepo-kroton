@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/role-supports-aria-props */
 import React, { useEffect, useState } from 'react'
 import TooltipEnem from '../tootip-enem'
 import { Styled } from 'direflow-component'

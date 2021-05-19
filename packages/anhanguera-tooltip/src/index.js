@@ -1,6 +1,4 @@
 import { HTMLActions } from '@zoly-cro/hooks'
-import HeadForm from './direflow-components/tooltip-component/components/head-form'
-
 
 function mainFunction() {
   try {

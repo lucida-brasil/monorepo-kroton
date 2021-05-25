@@ -8,6 +8,10 @@ import { HTMLActions } from "@zoly-cro/hooks";
 const TooltipGatilho = () => {
   const component = document.querySelector("zoly-tooltip-gatilho");
   var styles = `
+    .zoly-gatilho {
+      position : absolute !important;
+      transform : translateX(250%) translateY(-60%) !important;
+    }
     .modal__gatilho {
       width: 14rem;
       display: flex;
@@ -103,7 +107,7 @@ const TooltipGatilho = () => {
     }`;
   return (
     <Styled styles={styles}>
-      <div className="modal__gatilho display-block">
+      <div className="modal__gatilho display-block zoly-gatilho">
         <div className="paper">
           <div className="modal__text">
             <div className="modal__text title">Ei, não perca tempo!</div>

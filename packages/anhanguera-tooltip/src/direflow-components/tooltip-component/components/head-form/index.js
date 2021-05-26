@@ -5,6 +5,7 @@ import { Styled } from 'direflow-component'
 import { HTMLActions } from '@zoly-cro/hooks'
 import { handleElementsPitagoras } from './interceptions/handleElementsPitagoras'
 import { unifyAceiteSMS } from './interceptions/unifyAceiteSMS'
+import { handleElements } from './interceptions/handleElements'
 
 const HeadFormComponent = () => {
   const component = document.querySelector('zoly-head-form-component')
@@ -65,15 +66,8 @@ const HeadFormComponent = () => {
   const handleClose = () => setOpenDialog(false)
   useEffect(() => {
     window.setTimeout(() => setOpenDialog(true), 3000)
-    switch(component.university){
-      case 'Pitagoras':
-        handleElementsPitagoras()
-        break
-      default:
-        break
-    }
+    handleElements(component.university)
     unifyAceiteSMS()
-
   }, [])
 
   const handleEnemClick = () => {

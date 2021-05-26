@@ -6,6 +6,7 @@ const tooltipGatilho = {
   component: TooltipGatilho,
     properties: {
       color: "",
+      start: false
     },
     configuration: {
       tagname: "zoly-tooltip-gatilho",

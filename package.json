@@ -10,7 +10,5 @@
     "./packages/*",
     "./packages/**"
   ],
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }

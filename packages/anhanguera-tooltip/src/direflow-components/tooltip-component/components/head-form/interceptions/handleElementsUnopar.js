@@ -1,4 +1,4 @@
-export function handleElementsPitagoras() {
+export function handleElementsUnopar() {
   try {
     const components = document.querySelectorAll('.fnl-input-wrapper')
     if (components === undefined) return

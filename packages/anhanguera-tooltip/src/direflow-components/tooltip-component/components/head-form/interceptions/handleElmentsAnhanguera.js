@@ -1,4 +1,4 @@
-export function handleElementsPitagoras() {
+export function handleElementsAnhanguera() {
   try {
     const components = document.querySelectorAll('.fnl-input-wrapper')
     if (components === undefined) return
@@ -8,7 +8,7 @@ export function handleElementsPitagoras() {
     const email = document.querySelector('#email').closest('.fnl-form')
     const dtNascimento = document.querySelector('#dataNascimento').closest('.fnl-form')
     const anoConclusao = document.querySelector('#fnl-dataconclusao-search-input-div').closest('.fnl-form')
-    const mainDiv = document.querySelector('.fnl-steps-formgroup')
+    const mainDiv = document.querySelector('#formInscricao > .fnl-steps-formgroup')
     const celular = document.querySelector('#telefone') 
     const aceiteSMS = document.querySelector('#aceiteSMS').closest('.fnl-checkbox')    
     const hrDadosPessoais = document.querySelector('#fnl-section-endereco')
@@ -63,7 +63,7 @@ export function handleElementsPitagoras() {
       
       newDocumentosSection.appendChild(documentosFormDiv)
       
-      const elements = document.querySelectorAll('.fnl-steps-formgroup > div > *')
+      const elements = document.querySelectorAll('#formInscricao > div > *')
       
       let nope = false;
       elements.forEach((el) => {

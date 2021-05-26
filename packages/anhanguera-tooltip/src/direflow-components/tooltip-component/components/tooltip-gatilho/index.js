@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React from "react";
+import React, { useEffect } from "react";
 import { Styled } from "direflow-component";
 import Timer from "react-compound-timer";
 import { HTMLActions } from "@zoly-cro/hooks";
+import {mutationObserver} from './interceptions/handleRenderGatilho'
 
 // eslint-disable-next-line react/prop-types
 const TooltipGatilho = () => {
   const component = document.querySelector("zoly-tooltip-gatilho");
+  useEffect(() => mutationObserver,[])
   var styles = `
     .zoly-gatilho {
       position : absolute !important;
@@ -128,12 +130,14 @@ const TooltipGatilho = () => {
                 direction="backward"
                 formatValue={(value) => `${value < 10 ? `0${value}` : value}`}
               >
-                {() => (
+                {({start, stop}) => {
+                  component.start === true ? start() : stop();
+                  return (
                   <React.Fragment>
                     <Timer.Minutes />:
                     <Timer.Seconds />
                   </React.Fragment>
-                )}
+                )}}
               </Timer>
             </div>
           </div>

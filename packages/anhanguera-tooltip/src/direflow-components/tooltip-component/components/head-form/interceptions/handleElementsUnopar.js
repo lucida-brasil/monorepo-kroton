@@ -63,7 +63,7 @@ export function handleElementsUnopar() {
       
       newDocumentosSection.appendChild(documentosFormDiv)
       
-      const elements = document.querySelectorAll('.fnl-steps-formgroup > div > *')
+      let elements = document.querySelectorAll('.fnl-steps-formgroup > *')
       
       let nope = false;
       elements.forEach((el) => {
@@ -76,7 +76,7 @@ export function handleElementsUnopar() {
       })
       
       celular.addEventListener('blur', () => {
-        const elements = document.querySelectorAll('#formInscricao > div > .zoly-hide')
+        const elements = document.querySelectorAll('.fnl-steps-formgroup > .zoly-hide')
         elements.forEach((el) => el.classList.remove('zoly-hide'))
       })
 

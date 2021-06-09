@@ -12,6 +12,7 @@ export function handleElementsPitagoras() {
     const celular = document.querySelector('#telefone') 
     const aceiteSMS = document.querySelector('#aceiteSMS').closest('.fnl-checkbox')    
     const hrDadosPessoais = document.querySelector('#fnl-section-endereco')
+    // const hrAcessibilidade = document.querySelector('#fnl-section-acessibilidade')
     const newDocumentosSection = document.createElement('div')
     const documentosFormDiv = document.createElement('div')
     const h2Title = document.createElement('h2')
@@ -63,7 +64,7 @@ export function handleElementsPitagoras() {
       
       newDocumentosSection.appendChild(documentosFormDiv)
       
-      const elements = document.querySelectorAll('.fnl-steps-formgroup > div > *')
+      let elements = document.querySelectorAll('.fnl-steps-formgroup > *')
       
       let nope = false;
       elements.forEach((el) => {
@@ -76,7 +77,7 @@ export function handleElementsPitagoras() {
       })
       
       celular.addEventListener('blur', () => {
-        const elements = document.querySelectorAll('#formInscricao > div > .zoly-hide')
+        const elements = document.querySelectorAll('.fnl-steps-formgroup > .zoly-hide')
         elements.forEach((el) => el.classList.remove('zoly-hide'))
       })
 

@@ -1,0 +1,87 @@
+.carousel__container { 
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FDB813;
+    transform: rotate(6deg);
+    width: 45vw;
+    flex-direction: column;
+}
+
+.carousel__slide{
+    padding: 10%;
+}
+.carousel__background {
+    background-color: #5300B0;
+    transform: rotate(-6deg);
+    width: 45vw;
+}
+
+.svg {
+    padding-bottom: 5%;
+}
+
+.title {    
+    font-family: Bitter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+    padding-bottom: 10px;
+}
+
+.content {
+    font-family: Open Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+    padding-bottom: 34px;
+    
+}
+
+.btn__saiba-mais--position {
+    text-align: center;
+    padding-bottom: 4%;
+}
+
+@media screen and (width: 1024px){
+    .carousel__background, .carousel__container { 
+        height: 30vh;
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel__background{
+        width: 80vw;
+        transform: rotate(0deg);
+    }
+    .carousel__container{
+        width: 80vw;
+        transform: rotate(0deg);
+    }
+    .btn__saiba-mais--position {
+        position: relative;
+        padding: 0;
+        text-align: center;
+        transform: translateY(50%);
+        padding-bottom: 0;
+    }
+    .content {
+        font-size: 12px;
+        padding-bottom: 0;
+    }
+    .title {
+        font-size: 12px;
+    }
+ 
+}
+

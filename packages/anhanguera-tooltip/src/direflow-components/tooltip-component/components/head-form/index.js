@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 import TooltipEnem from '../tootip-enem'
 import { Styled } from 'direflow-component'
 import { HTMLActions } from '@zoly-cro/hooks'
-import { handleElementsPitagoras } from './interceptions/handleElementsPitagoras'
 import { unifyAceiteSMS } from './interceptions/unifyAceiteSMS'
 import { handleElements } from './interceptions/handleElements'
+import {mutationObserver} from './interceptions/handleRenderGatilho'
 
 const HeadFormComponent = () => {
   const component = document.querySelector('zoly-head-form-component')
@@ -66,8 +66,9 @@ const HeadFormComponent = () => {
   const handleClose = () => setOpenDialog(false)
   useEffect(() => {
     window.setTimeout(() => setOpenDialog(true), 3000)
-    handleElements(component.university)
     unifyAceiteSMS()
+    handleElements(component.university)
+    mutationObserver(component.color)
   }, [])
 
   const handleEnemClick = () => {

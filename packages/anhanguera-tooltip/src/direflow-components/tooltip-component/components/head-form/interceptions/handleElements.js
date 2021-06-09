@@ -1,5 +1,6 @@
 import { handleElementsPitagoras } from "./handleElementsPitagoras";
 import { handleElementsUnopar } from "./handleElementsUnopar";
+import { handleElementsAnhanguera } from "./handleElementsAnhanguera";
 
 export const handleElements = (university) => {
     switch (university) {
@@ -9,6 +10,10 @@ export const handleElements = (university) => {
         }
         case 'Unopar': {
             handleElementsUnopar()
+            break
+        } 
+        case 'Anhanguera': {
+            //handleElementsAnhanguera()
             break
         } 
         default:

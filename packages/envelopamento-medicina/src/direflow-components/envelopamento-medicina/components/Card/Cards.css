@@ -1,0 +1,80 @@
+.card__container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 270px;
+  height: 380.3px;
+  mix-blend-mode: normal;
+  box-shadow: 0px -1.88785px 18.8785px rgba(0, 0, 0, 0.15);
+  border-radius: 4.71963px;
+}
+
+.card__image {
+  width: 100%;
+}
+
+.card__title {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card__title--text {
+  font-family: Bitter;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  color: #5300b0;
+}
+.card__title--modalidade {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11.3271px;
+  line-height: 15px;
+  color: #4d4d4d;
+}
+.card__card__title--modalidade--around {
+  width: 63px;
+  height: 22.53px;
+  border: 0.943927px solid #4d4d4d;
+  box-sizing: border-box;
+  border-radius: 3.77571px;
+  text-align: center;
+}
+
+.card__content--text {
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 15px;
+    color: #879FAD;
+}
+
+.card__button {
+  margin-top: auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card__button--saiba {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 100.52%;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.card__content > * {
+  margin: 0.5em 0;
+}
+
+.card__content {
+  padding: 0 16px;
+  margin-bottom: 2%;
+}

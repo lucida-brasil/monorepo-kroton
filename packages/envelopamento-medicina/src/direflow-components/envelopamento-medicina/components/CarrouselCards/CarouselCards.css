@@ -1,0 +1,10 @@
+.carrousel-cards___container {
+  margin: auto;
+  width: 100vw;
+}
+.card__carousel-item {
+    margin: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

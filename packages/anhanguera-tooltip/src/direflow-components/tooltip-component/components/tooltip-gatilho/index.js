@@ -1,18 +1,17 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useEffect } from "react";
-import { Styled } from "direflow-component";
-import Timer from "react-compound-timer";
-import { HTMLActions } from "@zoly-cro/hooks";
-import {mutationObserver} from './interceptions/handleRenderGatilho'
+import React from 'react'
+import { Styled } from 'direflow-component'
+import Timer from 'react-compound-timer'
+import { HTMLActions } from '@zoly-cro/hooks'
 
 // eslint-disable-next-line react/prop-types
 const TooltipGatilho = () => {
-  const component = document.querySelector("zoly-tooltip-gatilho");
-  useEffect(() => mutationObserver,[])
+  const component = document.querySelector('zoly-tooltip-gatilho')
+
   var styles = `
     .zoly-gatilho {
       position : absolute !important;
-      transform : translateX(250%) translateY(-60%) !important;
+      transform : translateX(250%) translateY(-200%) !important;
     }
     .modal__gatilho {
       width: 14rem;
@@ -106,7 +105,7 @@ const TooltipGatilho = () => {
       .modal__gatilho {
         display: none;
       }
-    }`;
+    }`
   return (
     <Styled styles={styles}>
       <div className="modal__gatilho display-block zoly-gatilho">
@@ -122,33 +121,34 @@ const TooltipGatilho = () => {
               <img
                 className="svg__color"
                 src={
-                  "https://storage.googleapis.com/cro_seo-hospedagem_de_assets/Imagens%20Kroton%20-%20Ex%20Maxymiser/anhanguera/SVGS/ampulheta.svg"
+                  'https://storage.googleapis.com/cro_seo-hospedagem_de_assets/Imagens%20Kroton%20-%20Ex%20Maxymiser/anhanguera/SVGS/ampulheta.svg'
                 }
               />
               <Timer
                 initialTime={900000}
                 direction="backward"
-                formatValue={(value) => `${value < 10 ? `0${value}` : value}`}
+                formatValue={value => `${value < 10 ? `0${value}` : value}`}
               >
-                {({start, stop}) => {
-                  component.start === true ? start() : stop();
+                {({ start, stop }) => {
+                  component.start === true ? start() : stop()
                   return (
-                  <React.Fragment>
-                    <Timer.Minutes />:
-                    <Timer.Seconds />
-                  </React.Fragment>
-                )}}
+                    <React.Fragment>
+                      <Timer.Minutes />:
+                      <Timer.Seconds />
+                    </React.Fragment>
+                  )
+                }}
               </Timer>
             </div>
           </div>
         </div>
       </div>
     </Styled>
-  );
-};
+  )
+}
 
 TooltipGatilho.defaultProps = {
-  color: "black",
-};
+  color: 'black'
+}
 
-export default TooltipGatilho;
+export default TooltipGatilho

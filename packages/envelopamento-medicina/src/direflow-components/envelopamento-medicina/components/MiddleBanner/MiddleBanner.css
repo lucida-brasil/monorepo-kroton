@@ -1,0 +1,48 @@
+
+@media (min-width: 1024px){
+  .middle-banner__container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    width: 100vw;
+  }
+  
+  .middle-banner__image{
+    width: 100%;
+  }
+  
+  .carousel__position{
+    position: absolute;
+    transform: translateX(105%);
+    box-sizing: border-box;
+    width: 50%;
+  }
+  
+  .image {
+    width: 70%;
+  }
+}
+
+
+@media (max-width: 768px){
+  .middle-banner__container{
+    flex-direction: column;
+    margin-bottom: -12.5% !important;
+  }
+  .middle-banner__image{
+    width: 100%;
+    height: 50%;
+  }
+  .carousel__position{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw; 
+    box-sizing: border-box;
+    position: relative;
+    transform: translateY(-30%);
+  }
+  .image {
+    width: 100vw;
+  }
+}

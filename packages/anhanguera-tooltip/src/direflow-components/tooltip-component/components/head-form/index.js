@@ -5,7 +5,7 @@ import { Styled } from 'direflow-component'
 import { HTMLActions } from '@zoly-cro/hooks'
 import { unifyAceiteSMS } from './interceptions/unifyAceiteSMS'
 import { handleElements } from './interceptions/handleElements'
-import {mutationObserver} from './interceptions/handleRenderGatilho'
+import { mutationObserver } from './interceptions/handleRenderGatilho'
 
 const HeadFormComponent = () => {
   const component = document.querySelector('zoly-head-form-component')
@@ -61,24 +61,41 @@ const HeadFormComponent = () => {
     transform: translateX(250%) translateY(-60%);
   
   }`
+  const hostname = window.location.hostname.split('.')[1]
   const [btnEnemClick, setEnemClick] = useState(false)
   const [openDialog, setOpenDialog] = useState(false)
   const handleClose = () => setOpenDialog(false)
   useEffect(() => {
+    const hj = window.hj ||  function () {
+        (hj.q = hj.q || []).push(arguments)
+      }
+    hj('trigger', 'funil_variation_b')
     window.setTimeout(() => setOpenDialog(true), 3000)
     unifyAceiteSMS()
     handleElements(component.university)
-    mutationObserver(component.color)
+    //mutationObserver(component.color)
   }, [])
 
   const handleEnemClick = () => {
     if (btnEnemClick === false) HTMLActions.simulateMouseClick(element)
     setEnemClick(true)
+    HTMLActions.pushDataLayer({
+      event: 'event',
+      eventCategory: `${hostname}:graduacao`,
+      eventAction: 'clique:botao',
+      eventLabel: `${hostname}:nota-enem`
+    })
   }
 
   const handleVestibularClick = () => {
     if (btnEnemClick === true) HTMLActions.simulateMouseClick(element)
     setEnemClick(false)
+    HTMLActions.pushDataLayer({
+      event: 'event',
+      eventCategory: `${hostname}:graduacao`,
+      eventAction: 'clique:botao',
+      eventLabel: `${hostname}:vestibular-online`
+    })
   }
 
   return (

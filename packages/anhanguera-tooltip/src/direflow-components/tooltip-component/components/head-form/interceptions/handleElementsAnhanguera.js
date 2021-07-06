@@ -1,3 +1,5 @@
+import { HTMLActions } from "../../../../../../../libs/hooks"
+
 export function handleElementsAnhanguera() {
   try {
     const components = document.querySelectorAll('.fnl-input-wrapper')
@@ -36,6 +38,14 @@ export function handleElementsAnhanguera() {
       text-align: left;
       ">*Você poderá cancelar a qualquer momento.</span>
       </div>`
+      divCheckboxWpp.addEventListener('click', () => {
+        const hostname = window.location.hostname.split('.')[1]
+        HTMLActions.pushDataLayer({
+          event: 'event',
+          eventCategory: `${hostname}:concordo-receber-contato-whatsapp`,
+          eventAction: 'clique:checkbox'
+        })
+      })
       mainDiv.insertBefore(divCheckboxWpp, hrDadosPessoais)
       mainDiv.insertBefore(newDocumentosSection, hrDadosPessoais)
       

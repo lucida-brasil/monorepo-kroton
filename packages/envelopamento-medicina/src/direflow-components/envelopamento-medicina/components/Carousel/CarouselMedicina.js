@@ -8,6 +8,16 @@ import carouselStyle from 'react-responsive-carousel/lib/styles/carousel.min.css
 import { HTMLActions } from '../../../../../../libs/hooks'
 
 const CarouselMedicina = ({ color }) => {
+  const hostname = window.location.hostname.split('.')[1]
+  const handleClickCardMedicina = () => {
+    HTMLActions.pushDataLayer({
+      event:'event',
+      eventCategory:`${hostname}:graduacao`,
+      eventAction:'clique:botao',
+      eventLabel: `${hostname}:saiba-mais-card-medicina`
+    })
+    return window.location.href = '/medicina'
+  }
   let cssAdicional = `.btn__saiba-mais{
                           padding: auto;                                               
                           background: ${color};
@@ -53,7 +63,7 @@ const CarouselMedicina = ({ color }) => {
             })}
           </Carousel>
           <div className="btn__saiba-mais--position">
-            <button className="btn__saiba-mais">SAIBA MAIS</button>
+            <button className="btn__saiba-mais" onClick={handleClickCardMedicina}>SAIBA MAIS</button>
           </div>
         </div>
       </div>

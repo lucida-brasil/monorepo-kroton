@@ -11,6 +11,15 @@ import CarouselCards from './components/CarrouselCards/CarouselCards'
 import { HTMLActions } from '../../../../libs/hooks'
 
 const App = () => {
+  const hostname = window.location.hostname.split('.')[1]
+  const handleClickVerTodosCursos = () => {
+    HTMLActions.pushDataLayer({
+      event:'event',
+      eventCategory:`${hostname}:ver-todos-cursos`,
+      eventAction:'clique:botao'
+    })
+    return window.location.href = '/cursos'
+  }
   const element = document.querySelector('envelopamento-medicina')
   const images =
     HTMLActions.getWindowDimensions().width > 768
@@ -21,7 +30,9 @@ const App = () => {
       <div className="app">
         <section>
           <div className="wrapper-banner">
-            <Banner src="https://storage.googleapis.com/cro_seo-hospedagem_de_assets/Imagens%20Kroton%20-%20Ex%20Maxymiser/Builds/Tdk09dktS0ilMPrStt7MSA/assets/1980x693_BANNEER_pitagoras_medicina%201.png" />
+            <Banner srcDesk="https://storage.googleapis.com/cro_seo-hospedagem_de_assets/Imagens%20Kroton%20-%20Ex%20Maxymiser/Builds/Tdk09dktS0ilMPrStt7MSA/assets/1980x693_BANNEER_pitagoras_medicina%201.png"
+            srcMobile="https://storage.googleapis.com/cro_seo-hospedagem_de_assets/Imagens%20Kroton%20-%20Ex%20Maxymiser/Builds/Tdk09dktS0ilMPrStt7MSA/assets/Medicina_Banner_Home_360_x_260.jpg"
+            />
           </div>
         </section>
         <section>
@@ -48,7 +59,7 @@ const App = () => {
                     title={item.title}
                     modalidade={item.modalidade}
                     content={item.content}
-                    link={item.link}
+                    links={item.links}
                     buttonColor={element.color}
                   />
                 </React.Fragment>
@@ -56,12 +67,12 @@ const App = () => {
             })}
           </div>
           <div className="link__todos-cursos">
-            <a className="link__todos-cursos text">VER TODOS OS CURSOS</a>
+            <a className="link__todos-cursos text" onClick={handleClickVerTodosCursos}>VER TODOS OS CURSOS</a>
           </div>
         </section>
         <section className="wrapper-cards-mobile">
           <CarouselCards />
-          <div className="link__todos-cursos">
+          <div className="link__todos-cursos" onClick={handleClickVerTodosCursos}>
             <a className="link__todos-cursos text">VER TODOS OS CURSOS</a>
           </div>
         </section>

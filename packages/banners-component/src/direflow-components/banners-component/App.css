@@ -1,0 +1,10 @@
+.banner__click {
+  cursor: pointer;
+}
+.app{
+  margin: 0;
+  padding: 0;
+}
+.image {
+  width: 100%;
+}

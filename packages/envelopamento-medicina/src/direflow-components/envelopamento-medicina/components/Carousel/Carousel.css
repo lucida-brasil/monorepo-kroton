@@ -54,8 +54,8 @@
 
 @media screen and (width: 1024px){
     .carousel__background, .carousel__container { 
-        height: 30vh;
-        width: 40vw;
+        height:calc(30vh - 10%);
+        width: calc(40vw - 10%);
     }
 }
 

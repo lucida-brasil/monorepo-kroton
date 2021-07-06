@@ -1,3 +1,5 @@
+import { HTMLActions } from "../../../../../../../libs/hooks"
+
 export function handleElementsPitagoras() {
   try {
     const components = document.querySelectorAll('.fnl-input-wrapper')
@@ -37,6 +39,15 @@ export function handleElementsPitagoras() {
       text-align: left;
       ">*Você poderá cancelar a qualquer momento.</span>
       </div>`
+      divCheckboxWpp.addEventListener('click', () => {
+        const hostname = window.location.hostname.split('.')[1]
+        HTMLActions.pushDataLayer({
+          event: 'event',
+          eventCategory: `${hostname}:graduacao`,
+          eventAction: 'clique:checkbox',
+          eventLabel:`${hostname}:concordo-receber-contato-whatsapp`
+        })
+      })
       mainDiv.insertBefore(divCheckboxWpp, hrDadosPessoais)
       mainDiv.insertBefore(newDocumentosSection, hrDadosPessoais)
       
@@ -45,13 +56,10 @@ export function handleElementsPitagoras() {
       
       h2Title.classList.add('fnl-h2', 'fnl-m-b-24')
       hr.classList.add('fnl-hr', 'fnl-m-t-10')
-      anoConclusao.classList.add('.zoly-hide')
-      cpf.classList.replace('fnl-col-50', 'fnl-col-100')
+      // cpf.classList.replace('fnl-col-50', 'fnl-col-100')
       email.classList.replace('fnl-col-100', 'fnl-col-50')
       aceiteSMS.hidden = true
       wpp.hidden = true
-      anoConclusao.hidden = true
-      
       
       newDocumentosSection.appendChild(hr)
       newDocumentosSection.appendChild(h2Title)
@@ -59,6 +67,7 @@ export function handleElementsPitagoras() {
       documentosFormDiv.appendChild(cpf)
       documentosFormDiv.appendChild(rg)
       documentosFormDiv.appendChild(dtNascimento)
+      documentosFormDiv.appendChild(anoConclusao)
       
       documentosFormDiv.classList.add('fnl-row')
       
